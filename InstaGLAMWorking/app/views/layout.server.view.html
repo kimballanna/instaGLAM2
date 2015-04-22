@@ -46,8 +46,10 @@
 <body class="ng-cloak">
 	<header data-ng-include="'/modules/core/views/header.client.view.html'" class="navbar navbar-fixed-top navbar-inverse"></header>
 	<section class="content">
-	<div ng-show="myValue" class="ng-hide"> New Article Posted! </div>
-	<div ng-show="myValue2" class="ng-hide"> New Photo Posted! </div>
+	<div ng-show="myValue" class="ng-hide"> New Trash Talk Posted! </div>
+	<div ng-show="myValue2" class="ng-hide"> New Selfie Posted! </div>
+	<div ng-show="myValue3" class="ng-hide"> Selfie Updated! </div>
+	<div ng-show="myValue4" class="ng-hide"> Selfie Deleted! </div>
 		<section class="container">
 			{% block content %}{% endblock %}
 		</section>
