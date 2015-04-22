@@ -1,0 +1,104 @@
+<link href='http://fonts.googleapis.com/css?family=Lobster|Anton|Pacifico|Playfair+Display+SC|Playball' rel='stylesheet' type='text/css'>
+<style>
+
+#btn-like{
+	font-family: 'Playfair Display SC', serif;
+	background-color:black; 
+	color:#fce757; 
+	float:left; 
+}
+h2{
+	font-family: 'Playfair Display SC', serif;
+}
+
+</style>
+<!-- Custom CSS -->
+    <link href="/public/lib/bootstrap/dist/css/sb-admin-2.css" rel="stylesheet">
+	<link href="mystyles.css" rel="stylesheet">
+
+<section data-ng-controller="PhotosController" data-ng-init="findOne()">
+	<!--<div ng-show="myValue2" class="ng-hide" style="color:black"> New Photo Posted! </div>-->
+
+	<div class="page-header">
+		<h1 data-ng-bind="photo.name" style="color:black"></h1>
+	</div>
+	<div class="pull-right" data-ng-show="((authentication.user) && (authentication.user._id == photo.user._id))">
+		<a class="btn btn-primary" href="/#!/photos/{{photo._id}}/edit">
+			<i class="glyphicon glyphicon-edit"></i>
+		</a>
+		<a class="btn btn-primary" data-ng-click="remove();">
+			<i class="glyphicon glyphicon-trash"></i>
+		</a>
+	</div>
+	<div>
+		<h2>
+			Posted on
+			<span data-ng-bind="photo.created | date:'mediumDate'"></span>
+			by
+			<span data-ng-bind="photo.user.displayName"></span>
+		</h2>
+		</div>
+		<div>
+		<h2>
+			Likes: <span data-ng-bind="photo.likes"></span>
+			Dislikes: <span data-ng-bind="photo.dislikes"></span>
+			Views: <span data-ng-bind="photo.views"></span>
+		</h2>
+		</div>
+		<div>
+		<h2>
+			<button class="btn btn-success" ng-click="likeThis()" id="btn-like" data-id="{{ image.uniqueId }}" ><i class="fa fa-usd"><font style ="font-family: 'Playfair Display SC', serif">Glam</style></i></button>
+			
+		</h2>
+		</div><div>
+		<h2>
+			<button class="btn btn-success" ng-click="dislikeThis()" id="btn-dislike" data-id="{{ image.uniqueId }}"  style="background-color:black; color:#fce757"><i class="fa fa-trash"><font style ="font-family: 'Playfair Display SC', serif">Trashy</style></i></button>
+			
+		</h2>
+		</div>
+		<br>
+		<br>
+
+		<div class="page-body" style="display:inline-block; text-align:left; float:left;">
+			<image ng-src="{{photo.image}}" style="max-width:700px;"/>
+		</div>
+		<div class="photodescription" style="text-align:left; float:left; margin-left: 1%; font-size:20px;">
+		Description:
+		<p data-ng-bind="photo.description"></p>
+		
+		</div><br /><br />
+		
+		
+		<!-- Comment Section -->
+		<ul style="clear:left; padding-top:2%;" class="panel panel-yellow">
+            
+            <li class="media">
+                <div id="commentlist">
+                    <strong class="media-heading" style="font-size:20px; padding-right: 1%;">User:</strong><span data-ng-bind="photo.user.displayName"></span><br />
+					<strong class="media-heading" style="font-size:20px; padding-right: 1%;">Comment:</strong>comment<br />
+                    <small class="text-muted" style="padding-right: 1%;">Posted on: <span data-ng-bind="photo.created | date:'mediumDate'"></span></small>
+                </div>
+            </li>
+            
+        </ul>
+		
+		
+		<!-- Comment Post Section -->
+		<form method="post" action="#" enctype="application/x-www-form-urlencoded">
+		
+             
+			<div class="form-group col-lg-12" style="margin-left:-30px; padding-top:20px;">
+				
+				<div class="col-lg-12" style="margin-left:0px;">
+					<textarea class="form-control" name="comment" rows="2"></textarea>
+				</div>
+				<div class="form-group col-md-12">
+					<div class="col-md-12" style="margin-left:-15px; padding-top:10px;">
+						<button type="submit" id="login-btn" class-"btn btn-success" type="button"><i class="fa fa-cloud-upload "></i>Add a comment</button>
+					</div>
+				</div>
+			</div>
+		
+		</form>
+	
+</section>
