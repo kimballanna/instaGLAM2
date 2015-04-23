@@ -3,11 +3,14 @@
 
 #btn-like{
 	font-family: 'Playfair Display SC', serif;
-	background-color:black; 
+	background-color:#000000; 
 	color:#fce757; 
 	float:left; 
 }
 h2{
+	font-family: 'Playfair Display SC', serif;
+}
+h1{
 	font-family: 'Playfair Display SC', serif;
 }
 
@@ -15,6 +18,7 @@ h2{
 <!-- Custom CSS -->
     <link href="/public/lib/bootstrap/dist/css/sb-admin-2.css" rel="stylesheet">
 	<link href="mystyles.css" rel="stylesheet">
+	
 
 <section data-ng-controller="PhotosController" data-ng-init="findOne()">
 	<!--<div ng-show="myValue2" class="ng-hide" style="color:black"> New Photo Posted! </div>-->
@@ -47,7 +51,7 @@ h2{
 		</div>
 		<div>
 		<h2>
-			<button class="btn btn-success" ng-click="likeThis()" id="btn-like" data-id="{{ image.uniqueId }}" ><i class="fa fa-usd"><font style ="font-family: 'Playfair Display SC', serif">Glam</style></i></button>
+			<button class="btn btn-success" ng-click="likeThis()" id="btn-like" data-id="{{ image.uniqueId }}" ><i class="fa fa-usd"><font style ="font-family: 'Playfair Display SC', serif; background-color:#000;">Glam</style></i></button>
 			
 		</h2>
 		</div><div>
