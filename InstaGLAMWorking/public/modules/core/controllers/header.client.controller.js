@@ -18,14 +18,17 @@ angular.module('core').controller('HeaderController', ['$scope', '$rootScope', '
 		Socket.on('article.created', function(article) {
 			console.log(article);
                   $rootScope.myValue=true;
+<<<<<<< HEAD
 				  $rootScope.myValue5=false;
 				  $rootScope.myValue4=false;
+=======
+>>>>>>> origin/master
 				  $rootScope.myValue2=false;
-				  $rootScope.myValue3=false;
 		});
 		Socket.on('photo.created', function(photo) {
 			console.log(photo);
                   $rootScope.myValue2=true;
+<<<<<<< HEAD
 				  $rootScope.myValue5=false;
 				  $rootScope.myValue4=false;
 				  $rootScope.myValue=false;
@@ -53,6 +56,8 @@ angular.module('core').controller('HeaderController', ['$scope', '$rootScope', '
 				  $rootScope.myValue4=false;
 				  $rootScope.myValue3=false;
 				  $rootScope.myValue2=false;
+=======
+>>>>>>> origin/master
 				  $rootScope.myValue=false;
 		});
 	}

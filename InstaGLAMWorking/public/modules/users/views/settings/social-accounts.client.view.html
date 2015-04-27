@@ -1,23 +1,5 @@
-<link href='http://fonts.googleapis.com/css?family=Lobster|Anton|Pacifico|Playfair+Display+SC|Playball' rel='stylesheet' type='text/css'>
-<style>
-
-#btn-like{
-	font-family: 'Playfair Display SC', serif;
-	background-color:#000000; 
-	color:#fce757; 
-	float:left; 
-}
-h2,p,form{
-	font-family: 'Playfair Display SC', serif;
-}
-
- h4, .text-center, input{
-    	font-family: 'Playball', serif;
-    	color:black;
-    }
-</style>
 <section class="row" data-ng-controller="SettingsController">
-	<h3 class="col-md-12 text-center" data-ng-show="hasConnectedAdditionalSocialAccounts()" style="font-family:'Playfair Display SC', serif">Connected social accounts:</h3>
+	<h3 class="col-md-12 text-center" data-ng-show="hasConnectedAdditionalSocialAccounts()">Connected social accounts:</h3>
 	<div class="col-md-12 text-center">
 		<div data-ng-repeat="(providerName, providerData) in user.additionalProvidersData" class="remove-account-container">
 			<img ng-src="/modules/users/img/buttons/{{providerName}}.png">
