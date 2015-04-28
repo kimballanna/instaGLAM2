@@ -1,6 +1,23 @@
-	  
+<link href='http://fonts.googleapis.com/css?family=Lobster|Anton|Pacifico|Playfair+Display+SC|Playball' rel='stylesheet' type='text/css'>
+<style>
+
+#btn-like{
+	font-family: 'Playfair Display SC', serif;
+	background-color:#000000; 
+	color:#fce757; 
+	float:left; 
+}
+h2,h3,p,form{
+	font-family: 'Playfair Display SC', serif;
+}
+
+ h4, .text-center, input{
+    	font-family: 'Playball', serif;
+    	color:black;
+    }
+</style>	  
 <section class="row" data-ng-controller="SettingsController">
-	<h3 class="col-md-12 text-center">Edit your profile</h3>
+	<h2 class="col-md-12 text-center">Edit your profile</h2>
 	<div class="col-md-5" style="float:left; display:inline-block;">
 		<h3>Profile Picture</h3>
 		
@@ -8,8 +25,8 @@
 		
 		<div flow-init="{singleFile:true}"
 			 flow-file-added="!!{png:1,gif:1,jpg:1,jpeg:1}[$file.getExtension()]">
-			<h3>
-			<a name="image-example" class="anchor" href="#image-example"><span class="octicon octicon-link"></span></a>Single Image upload</h3>
+			<h4>
+			<a name="image-example" class="anchor" href="#image-example"><span class="octicon octicon-link"></span></a>Single Image upload</h4>
 			<div class="thumbnail" ng-show="!$flow.files.length">
 			  <img src="http://www.placehold.it/200x150/EFEFEF/AAAAAA&text=no+image" />
 			</div>
@@ -18,15 +35,15 @@
 			</div>
 			<div>
 				<input type="file" accept="public/uploads/*" image="image" flow-btn/>
-			  <span class="btn btn-primary" ng-show="!$flow.files.length" flow-btn>Select image</span>
-			  <span class="btn btn-info" ng-show="$flow.files.length" flow-btn>Change</span>
-			  <span class="btn btn-danger" ng-show="$flow.files.length"
-				 ng-click="$flow.cancel()">
+			  <span id="btn-like" class="btn btn-primary" ng-show="!$flow.files.length" flow-btn style="background-color:#000000">Select image</span>
+			  <span id="btn-like" class="btn btn-info" ng-show="$flow.files.length" flow-btn style="background-color:#000000">Change</span>
+			  <span id="btn-like" class="btn btn-danger" ng-show="$flow.files.length"
+				 ng-click="$flow.cancel()" style="background-color:#000000">
 				Remove
-			  </span>
+			  </span> 
 			</div>
 			<p>
-			  Only PNG,GIF,JPG,JEPG files allowed.
+			  Only PNG, GIF, JPG, JEPG files allowed.
 			</p>
 			
 <img ng-show="image" ng-src="{{image.url}}" type="{{image.file.type}}" />
@@ -54,7 +71,7 @@
 					<input type="text" id="username" name="username" class="form-control" data-ng-model="user.username" placeholder="Username">
 				</div>
 				<div class="text-center form-group">
-					<button type="submit" class="btn btn-large btn-primary">Save Profile</button>
+					<button type="submit" class="btn btn-large btn-primary" id="btn-like">Save Profile</button>
 				</div>
 				<div data-ng-show="success" class="text-center text-success">
 					<strong>Profile Saved Successfully</strong>

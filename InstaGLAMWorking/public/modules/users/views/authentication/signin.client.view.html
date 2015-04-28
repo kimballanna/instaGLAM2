@@ -1,5 +1,23 @@
+<link href='http://fonts.googleapis.com/css?family=Lobster|Anton|Pacifico|Playfair+Display+SC|Playball' rel='stylesheet' type='text/css'>
+<style>
+
+#btn-like{
+	font-family: 'Playfair Display SC', serif;
+	background-color:#000000; 
+	color:#fce757; 
+	float:left; 
+}
+h2,p,form{
+	font-family: 'Playfair Display SC', serif;
+}
+
+ h4, .text-center, input{
+    	font-family: 'Playball', serif;
+    	color:black;
+    }
+</style>
 <section class="row" data-ng-controller="AuthenticationController">
-	<h3 class="col-md-12 text-center">Sign in using your social accounts</h3>
+	<h3 class="col-md-12 text-center" style="font-family:'Playfair Display SC', serif">Sign in using your social accounts</h3>
 	<div class="col-md-12 text-center">
 		<a href="/auth/facebook" class="undecorated-link">
 			<img src="/modules/users/img/buttons/facebook.png">
@@ -30,11 +48,11 @@
 					<input type="password" id="password" name="password" class="form-control" data-ng-model="credentials.password" placeholder="Password">
 				</div>
 				<div class="text-center form-group">
-					<button type="submit" class="btn btn-primary">Sign in</button>&nbsp; or&nbsp;
-					<a href="/#!/signup">Sign up</a>
+					<button type="submit" class="btn btn-primary" id="btn-like">Sign in</button>&nbsp; or&nbsp;
+					<a href="/#!/signup"><font color="#000000">Sign up</a></font>
 				</div>
 				<div class="forgot-password">
-					<a href="/#!/password/forgot">Forgot your password?</a>
+					<a href="/#!/password/forgot"><font color="#000000">Forgot your password?</a></font>
 				</div>
 				<div data-ng-show="error" class="text-center text-danger">
 					<strong data-ng-bind="error"></strong>

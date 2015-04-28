@@ -1,5 +1,23 @@
+<link href='http://fonts.googleapis.com/css?family=Lobster|Anton|Pacifico|Playfair+Display+SC|Playball' rel='stylesheet' type='text/css'>
+<style>
+
+#btn-like{
+	font-family: 'Playfair Display SC', serif;
+	background-color:#000000; 
+	color:#fce757; 
+	float:left; 
+}
+h2,p,form{
+	font-family: 'Playfair Display SC', serif;
+}
+
+ h4, .text-center, input{
+    	font-family: 'Playball', serif;
+    	color:black;
+    }
+</style>
 <section class="row" data-ng-controller="AuthenticationController">
-	<h3 class="col-md-12 text-center">Sign up using your social accounts</h3>
+	<h3 class="col-md-12 text-center" style="font-family:'Playfair Display SC', serif">Sign up using your social accounts</h3>
 	<div class="col-md-12 text-center">
 		<a href="/auth/facebook" class="undecorated-link">
 			<img src="/modules/users/img/buttons/facebook.png">
@@ -17,7 +35,7 @@
 			<img src="/modules/users/img/buttons/github.png">
 		</a>
 	</div>
-	<h3 class="col-md-12 text-center">Or with your email</h3>
+	<h3 class="col-md-12 text-center" style="font-family:'Playfair Display SC', serif">Or with your email</h3>
 	<div class="col-xs-offset-2 col-xs-8 col-md-offset-5 col-md-2">
 		<form name="userForm" data-ng-submit="signup()" class="signin form-horizontal" novalidate autocomplete="off">
 			<fieldset>
@@ -42,8 +60,8 @@
 					<input type="password" id="password" name="password" class="form-control" data-ng-model="credentials.password" placeholder="Password">
 				</div>
 				<div class="text-center form-group">
-					<button type="submit" class="btn btn-large btn-primary">Sign up</button>&nbsp; or&nbsp;
-					<a href="/#!/signin" class="show-signup">Sign in</a>
+					<button type="submit" class="btn btn-large btn-primary" id="btn-like">Sign up</button>&nbsp; or&nbsp;
+					<a href="/#!/signin" class="show-signup"><font color="#000000">Sign in</a></font>
 				</div>
 				<div data-ng-show="error" class="text-center text-danger">
 					<strong data-ng-bind="error"></strong>

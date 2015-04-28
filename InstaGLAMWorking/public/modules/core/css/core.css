@@ -8,8 +8,8 @@
 	display: none !important;
 }
 .ng-invalid.ng-dirty {
-	border-color: #000000;
+	border-color: #FA787E;
 }
 .ng-valid.ng-dirty {
-	border-color: #000000;
+	border-color: #78FA89;
 }
