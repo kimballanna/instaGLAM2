@@ -69,9 +69,6 @@ $scope.tab = function (tabIndex) {
 </script>	
 		<label>
 			<input type="radio" ng-click="photo in photos | orderBy: photo.likes" name="filters">
-
-			<input type="radio" ng-click="photo in photos | filter: photo.likes | orderBy: photo.likes" name="filters">
-
 			Top Rated:  <!--{{photo in photos | filter:likes | orderBy: photo.likes}}-->
 		</label>
 		<label>	

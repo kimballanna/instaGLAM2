@@ -30,9 +30,7 @@ exports.create = function(req, res) {
 		} else {
 			var socketio = req.app.get('socketio'); // makes a socket instance
 			socketio.emit('photo.created', photo); // sends the socket event to all current users
-			
-			//Fix redirect after sockets is implemented
-			// res.json({_id:photo._id});
+
 			res.redirect('/#!/photos/'+photo._id); // redirection to '/'jsonp(photo);
 			
 		}
@@ -69,9 +67,10 @@ exports.update = function(req, res) {
 				message: errorHandler.getErrorMessage(err)
 			});
 		} else {
-			var socketio = req.app.get('socketio'); // makes a socket instance
-			socketio.emit('photo.updated', photo); // sends the socket event to all current users
- 
+			// tackle out socket instance from the app container
+			//var socketio = req.app.get('socketio'); 
+			// emit an event for all connected clients
+			//socketio.sockets.emit('photo.created', photo); 
 			res.jsonp(photo);
 		}
 	});
@@ -89,13 +88,7 @@ exports.delete = function(req, res) {
 				message: errorHandler.getErrorMessage(err)
 			});
 		} else {
-			var socketio = req.app.get('socketio'); // makes a socket instance
-			socketio.emit('photo.deleted', photo); // sends the socket event to all current users
-			
-			//Fix redirect after sockets is implemented
-			// res.json({_id:photo._id});
-			res.redirect('/#!/photos/'+photo._id); // redirection to '/'jsonp(photo);
-			//res.jsonp(photo);
+			res.jsonp(photo);
 		}
 	});
 };
