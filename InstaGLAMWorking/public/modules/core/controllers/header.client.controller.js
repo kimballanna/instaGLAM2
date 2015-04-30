@@ -23,6 +23,8 @@ angular.module('core').controller('HeaderController', ['$scope', '$rootScope', '
 				  $rootScope.myValue4=false;
 				  $rootScope.myValue5=false;
 				  $rootScope.myValue6=false;
+				  $rootScope.myValue7=false;
+				  $rootScope.myValue8=false;
 		});
 		Socket.on('photo.created', function(photo) {
 			console.log(photo);
@@ -32,6 +34,8 @@ angular.module('core').controller('HeaderController', ['$scope', '$rootScope', '
 				  $rootScope.myValue4=false;
 				  $rootScope.myValue5=false;
 				  $rootScope.myValue6=false;
+				  $rootScope.myValue7=false;
+				  $rootScope.myValue8=false;
 		});
 		Socket.on('photo.updated', function(photo) {
 			console.log(photo);
@@ -41,6 +45,8 @@ angular.module('core').controller('HeaderController', ['$scope', '$rootScope', '
 				  $rootScope.myValue4=false;
 				  $rootScope.myValue5=false;
 				  $rootScope.myValue6=false;
+				  $rootScope.myValue7=false;
+				  $rootScope.myValue8=false;
 		});
 		Socket.on('photo.deleted', function(photo) {
 			console.log(photo);
@@ -50,6 +56,8 @@ angular.module('core').controller('HeaderController', ['$scope', '$rootScope', '
 				  $rootScope.myValue3=false;
 				  $rootScope.myValue5=false;
 				  $rootScope.myValue6=false;
+				  $rootScope.myValue7=false;
+				  $rootScope.myValue8=false;
 		});
 		Socket.on('profile.updated', function(profile) {
 			console.log(profile);
@@ -59,6 +67,8 @@ angular.module('core').controller('HeaderController', ['$scope', '$rootScope', '
 				  $rootScope.myValue3=false;
 				  $rootScope.myValue4=false;
 				  $rootScope.myValue6=false;
+				  $rootScope.myValue7=false;
+				  $rootScope.myValue8=false;
 		});
 		Socket.on('user.updated', function(profile) {
 			//console.log(profile);
@@ -68,6 +78,30 @@ angular.module('core').controller('HeaderController', ['$scope', '$rootScope', '
 				  $rootScope.myValue3=false;
 				  $rootScope.myValue4=false;
 				  $rootScope.myValue5=false;
+				  $rootScope.myValue7=false;
+				  $rootScope.myValue8=false;
+		});
+		Socket.on('article.updated', function(article) {
+			console.log(article);
+                  $rootScope.myValue7=true;
+				  $rootScope.myValue2=false;
+				  $rootScope.myValue3=false;
+				  $rootScope.myValue4=false;
+				  $rootScope.myValue5=false;
+				  $rootScope.myValue6=false;
+				  $rootScope.myValue=false;
+				  $rootScope.myValue8=false;
+		});
+		Socket.on('article.deleted', function(article) {
+			console.log(article);
+                  $rootScope.myValue8=true;
+				  $rootScope.myValue2=false;
+				  $rootScope.myValue3=false;
+				  $rootScope.myValue4=false;
+				  $rootScope.myValue5=false;
+				  $rootScope.myValue6=false;
+				  $rootScope.myValue7=false;
+				  $rootScope.myValue=false;
 		});
 	}
 ]);

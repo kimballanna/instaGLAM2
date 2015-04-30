@@ -6,6 +6,7 @@
 var mongoose = require('mongoose'),
 	errorHandler = require('./errors.server.controller'),
 	Article = mongoose.model('Article'),
+	Photo = mongoose.model('Photo'),
 	_ = require('lodash');
 
 /**
@@ -24,7 +25,7 @@ exports.create = function(req, res) {
 			var socketio = req.app.get('socketio'); // makes a socket instance
 			socketio.emit('article.created', article); // sends the socket event to all current users
 
-                  res.json(article);
+                  res.json(article);	  
 		}
 	});
 };
@@ -50,6 +51,9 @@ exports.update = function(req, res) {
 				message: errorHandler.getErrorMessage(err)
 			});
 		} else {
+			var socketio = req.app.get('socketio'); // makes a socket instance
+			socketio.emit('article.updated', article); // sends the socket event to all current users
+
 			res.json(article);
 		}
 	});
@@ -67,6 +71,9 @@ exports.delete = function(req, res) {
 				message: errorHandler.getErrorMessage(err)
 			});
 		} else {
+			var socketio = req.app.get('socketio'); // makes a socket instance
+			socketio.emit('article.deleted', article); // sends the socket event to all current users
+
 			res.json(article);
 		}
 	});
