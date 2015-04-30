@@ -52,6 +52,7 @@
   background-repeat: repeat-x;
   border-color: #dbdbdb;
   border-color: #ccc;
+  color:#fce757;
 }
 .btn-default:hover,
 .btn-default:focus {
@@ -63,12 +64,14 @@
 .btn-default.active {
   background-color: #5f5f5f;
   border-color: #000000;
+  color:#fce757;
 }
 .btn-default.disabled,
 .btn-default:disabled,
 .btn-default[disabled] {
   background-color: #5f5f5f;
   background-image: none;
+  color:#fce757;
 }
 .btn-primary {
   background-image: -webkit-linear-gradient(top, #000000 0%, #000000 100%);

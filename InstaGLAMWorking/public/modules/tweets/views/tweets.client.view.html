@@ -1,8 +1,74 @@
-<div ng-controller="TweetsController">
+<link href='http://fonts.googleapis.com/css?family=Lobster|Anton|Pacifico|Playfair+Display+SC|Playball' rel='stylesheet' type='text/css'>
+    <link href="../bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+<style>
+/*fonts:
+font-family: 'Playfair Display SC', serif;
+font-family: 'Pacifico', cursive;
+font-family: 'Anton', sans-serif;
+font-family: 'Lobster', cursive;
+font-family: 'Playball', cursive;
+*/
+#photohome {
+	display: inline-block;
+}
 
+.photodescription {
+	font-size: 20px;
+}
+   span{
+        font-family: 'Playfair Display SC', serif;
+    }
+    
+    #nav_links:hover{
+        color:#fce757;
+    }
+    
+    h1{
+    	font-family: 'Playball', serif;
+    	color:black;
+    }
+    .form-control{
+    	font-family: 'Playball', serif;
+    	color:black;
+    }
+    .dropDown{
+    	font-family: 'Playball', serif;
+    	color:black;
+    }
+    
+    #control-label{
+        font-family: 'Playfair Display SC', serif;
+    }
+    h5{
+        font-family: 'Playfair Display SC', serif;
+    }
+    li{
+        font-family: 'Playfair Display SC', serif;
+    }
+    select{
+        font-family: 'Playfair Display SC', serif;
+    }
+    .btn-default{
+    	font-family: 'Playfair Display SC', serif;
+    }
+    .input-group-addon{
+    	font-family: 'Playfair Display SC', serif;
+    	background-color: black;
+    	color:#fce757;
+    
+    }
+    </style>
+
+
+
+<div ng-controller="TweetsController">
+<div class="page-header">
+        <h1>Tweets About Selfies</h1>
+    </div>
 	
 		<div id="search-container" class="row">
 			<div class="col-lg-3">
+				<label class="control-label" for="name"><h5>See who is talking trash</h5></label>
 
 				<!-- this form will trigger the getTweets function in the javascript controller on submit -->
 				<form class="input-group" ng-submit="getTweets()" >
