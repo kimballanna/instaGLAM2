@@ -57,6 +57,7 @@ angular.module('photos').controller('PhotosController', ['$scope', '$stateParams
 			}, function(errorResponse) {
 				$scope.error = errorResponse.data.message;
 			});
+			
 		};
 
 		// Find a list of Photos
@@ -98,4 +99,27 @@ angular.module('photos').controller('PhotosController', ['$scope', '$stateParams
 				$scope.error = errorResponse.data.message;
 			});
 		};
+		//Comment Function
+		/*
+		comment: function(req, res) {
+		var saveComment = function() {
+			var newComment = new Models.Comment({
+				image_id: req.params.image_id,
+				comment: req.body.comment,
+				name: req.body.name,
+				email: req.body.email
+			});
+		
+			newComment.save(function(err, comment) {
+				if (err) { 
+					throw err; 
+				} 
+				else {
+					res.redirect("/images/" + newComment.image_id);
+				}
+			});
+		}
+		saveComment();
+		//res.send('The image:comment POST controller');
+	}; */
 }]);

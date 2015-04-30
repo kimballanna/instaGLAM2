@@ -47,6 +47,9 @@ exports.update = function(req, res) {
 				message: errorHandler.getErrorMessage(err)
 			});
 		} else {
+			var socketio = req.app.get('socketio'); // makes a socket instance
+			socketio.emit('profile.updated', profile); // sends the socket event to all current users
+
 			res.jsonp(profile);
 		}
 	});

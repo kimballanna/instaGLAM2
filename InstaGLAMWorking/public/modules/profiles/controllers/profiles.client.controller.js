@@ -1,8 +1,8 @@
 'use strict';
 
 // Profiles controller
-angular.module('profiles').controller('ProfilesController', ['$scope', '$stateParams', '$location', 'Authentication', 'Profiles',
-	function($scope, $stateParams, $location, Authentication, Profiles) {
+angular.module('profiles').controller('ProfilesController', ['$scope', '$stateParams', '$location', 'Authentication', 'Socket', 'Profiles',
+	function($scope, $stateParams, $location, Authentication, Profiles, Socket) {
 		$scope.authentication = Authentication;
 
 		// Create new Profile
