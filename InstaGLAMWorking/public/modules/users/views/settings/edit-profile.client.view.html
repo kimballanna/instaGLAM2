@@ -1,11 +1,38 @@
-	  
+
 <section class="row" data-ng-controller="SettingsController">
-	<h3 class="col-md-12 text-center">Edit your profile</h3>
+	<h2 class="col-md-12 text-center">Edit your profile</h2>
 	<div class="col-md-5" style="float:left; display:inline-block;">
-		<h3>Profile Picture</h3>
+	<script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+
+<style type="text/css">
+	img {width:100px;}
+</style>
+<h3>Profile Picture</h3>
+<table>
+<tr>
+	<td>
+		<img id="uploadPreview1" src="/modules/users/img/buttons/no_image.jpg" /><br />
+		<input id="uploadImage1" type="file" name="p1" onchange="PreviewImage(1);" />
+	</td>
+	
+</tr>
+</table>
 		
-		
-		
+<script type="text/javascript">
+    function PreviewImage(no) {
+        var oFReader = new FileReader();
+        oFReader.readAsDataURL(document.getElementById("uploadImage"+no).files[0]);
+
+        oFReader.onload = function (oFREvent) {
+            document.getElementById("uploadPreview"+no).src = oFREvent.target.result;
+        };
+    }
+</script> 
+
+
+	
+
+		<!--
 		<div flow-init="{singleFile:true}"
 			 flow-file-added="!!{png:1,gif:1,jpg:1,jpeg:1}[$file.getExtension()]">
 			<h3>
@@ -30,7 +57,8 @@
 			</p>
 			
 <img ng-show="image" ng-src="{{image.url}}" type="{{image.file.type}}" />
-		</div>		
+		</div>	-->
+		
 	</div>
 
   
