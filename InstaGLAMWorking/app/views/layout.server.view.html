@@ -46,15 +46,41 @@
 <body class="ng-cloak">
 	<header data-ng-include="'/modules/core/views/header.client.view.html'" class="navbar navbar-fixed-top navbar-inverse"></header>
 	<section class="content">
-	<div ng-show="myValue" class="ng-hide"> New Trash Talk Posted! </div>
-	<div ng-show="myValue2" class="ng-hide"> New Selfie Posted! </div>
-	<div ng-show="myValue3" class="ng-hide"> Selfie Updated! </div>
-	<div ng-show="myValue4" class="ng-hide"> Selfie Deleted! </div>
-	<div ng-show="myValue5" class="ng-hide"> Account Updated! </div>
-	<div ng-show="myValue6" class="ng-hide"> Profile Updated! </div>
-	<div ng-show="myValue7" class="ng-hide"> Trash Talk Updated! </div>
-	<div ng-show="myValue8" class="ng-hide"> Trash Talk Deleted! </div>
+	<div ng-show="myValue" class="ng-hide" id="div1" style="width: 200px; height: 25px; border: solid black 1px;-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;border-radius: 10px;"><center><strong>New Trash Talk Posted! <a onClick="hide1();">X</a></strong></center></div>
+	<div ng-show="myValue2" class="ng-hide" id="div2" style="width: 200px; height: 25px; border: solid black 1px;-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;border-radius: 10px;"><center><strong>New Selfie Posted! <a onClick="hide2();">X</a></strong></center></div>
+	<div ng-show="myValue3" class="ng-hide" id="div3" style="width: 200px; height: 25px; border: solid black 1px;-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;border-radius: 10px;"><center><strong>Selfie Updated! <a onClick="hide3();">X</a></strong></center></div>
+	<div ng-show="myValue4" class="ng-hide" id="div4" style="width: 200px; height: 25px; border: solid black 1px;-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;border-radius: 10px;"><center><strong>Selfie Deleted! <a onClick="hide4();">X</a></strong></center></div>
+	<div ng-show="myValue5" class="ng-hide" id="div5" style="width: 200px; height: 25px; border: solid black 1px;-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;border-radius: 10px;"><center><strong>Account Updated! <a onClick="hide5();">X</a></strong></center></div>
+	<div ng-show="myValue6" class="ng-hide" id="div6" style="width: 200px; height: 25px; border: solid black 1px;-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;border-radius: 10px;"><center><strong>Profile Updated! <a onClick="hide6();">X</a></strong></center></div>
+	<div ng-show="myValue7" class="ng-hide" id="div7" style="width: 200px; height: 25px; border: solid black 1px;-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;border-radius: 10px;"><center><strong>Trash Talk Updated! <a onClick="hide7();">X</a></strong></center></div>
+	<div ng-show="myValue8" class="ng-hide" id="div8" style="width: 200px; height: 25px; border: solid black 1px;-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;border-radius: 10px;"><center><strong>Trash Talk Deleted! <a onClick="hide8();">X</a></strong></center></div>
 	
+	<script language="javascript">
+	function hide1() {
+					document.getElementById('div1').style.display = 'none'; 
+				}
+		function hide2() {
+					document.getElementById('div2').style.display = 'none'; 
+				}
+	function hide3() {
+					document.getElementById('div3').style.display = 'none'; 
+				}
+		function hide4() {
+					document.getElementById('div4').style.display = 'none'; 
+				}
+	function hide5() {
+					document.getElementById('div5').style.display = 'none'; 
+				}
+		function hide6() {
+					document.getElementById('div6').style.display = 'none'; 
+				}
+	function hide7() {
+					document.getElementById('div7').style.display = 'none'; 
+				}
+		function hide8() {
+					document.getElementById('div8').style.display = 'none'; 
+				}			
+	</script>
 		<section class="container">
 			{% block content %}{% endblock %}
 		</section>
