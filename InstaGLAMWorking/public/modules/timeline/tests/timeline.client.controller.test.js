@@ -2,9 +2,9 @@
 
 (function() {
 	// Timeline Controller Spec
-	describe('Tweets Controller Tests', function() {
+	describe('Timeline Controller Tests', function() {
 		// Initialize global variables
-		var TweetsController,
+		var TimelineController,
 			scope,
 			$httpBackend,
 			$stateParams,
@@ -45,7 +45,7 @@
 			$location = _$location_;
 
 			// Initialize the Timeline controller.
-			TweetsController = $controller('TweetsController', {
+			TimelineController = $controller('TimelineController', {
 				$scope: scope
 			});
 		}));

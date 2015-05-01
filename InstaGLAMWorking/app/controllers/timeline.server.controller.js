@@ -9,7 +9,7 @@ exports.findTweets = function(req, res) {
 		var TWEET_COUNT = 15;
 		var MAX_WIDTH = 305;
 		var OEMBED_URL = 'statuses/oembed';
-		var USER_TWEETS_URL = 'statuses/user_tweets';
+		var USER_TIMELINE_URL = 'statuses/user_timeline';
 
 	  var oEmbedTweets = [], tweets = [],
 
@@ -24,7 +24,7 @@ exports.findTweets = function(req, res) {
 	  }
 
 	  // request data 
-	  twitter.get(USER_TWEETS_URL, params, function (err, data, resp) {
+	  twitter.get(USER_TIMELINE_URL, params, function (err, data, resp) {
 
 		tweets = data;
 

@@ -1,7 +1,7 @@
 'use strict';
 
-angular.module('tweets')
-.controller('TweetsController', ['$scope','$resource',
+angular.module('timeline')
+.controller('TimelineController', ['$scope','$resource',
 	function($scope, $resource) {
 
 	  // set a default username value
@@ -16,7 +16,7 @@ angular.module('tweets')
     $scope.getTweets = function() {
 		$scope.tweetsResult = [];
 		var params = {
-			action: 'user_tweets',
+			action: 'user_timeline',
 			user: $scope.username
 		};
 		// create Tweet data resource
