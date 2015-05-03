@@ -1,3 +1,5 @@
+<link href='http://fonts.googleapis.com/css?family=Lobster|Anton|Pacifico|Playfair+Display+SC|Playball' rel='stylesheet' type='text/css'>
+
 <style>
 #photohome {
 	display: inline-block;
@@ -6,12 +8,68 @@
 .photodescription {
 	font-size: 20px;
 }
+
+.filters{
+	background-color:#FFDF00;
+	color:black;
+	text-decoration:none;
+	border-radius:5px;
+	padding:10px;
+	border-color:black;
+	border-style:solid;
+	font-family: 'Playball', cursive;
+}
+
+.filters:hover{
+	background-color:black;
+	color:#FFDF00;
+	text-decoration:none;
+	border-radius:5px;
+	padding:10px;
+	border-color:#FFDF00;
+	border-style:solid;
+	font-family: 'Playball', cursive;
+}
+
+	#pic_info{
+		font-family: 'Lobster', cursive;
+	}
+	
+	#username{
+		color:#fce757;
+		font-family: 'Playball', cursive;
+	}
+	
+	label{
+		font-family: 'Playfair Display SC', serif;
+	}
+	h1{
+		color:#000000;
+		font-family: 'Playball', cursive;
+	}
+.btn btn-default{
+	font-family: 'Playfair Display SC', serif;
+}
 </style>
+<!--
+<script type="text/javascript">
+ Caman('#pic', function () {
+    this.brightness(10);
+    this.contrast(30);
+    this.sepia(60);
+    this.saturation(-30);
+    this.render();
+  });
+</script>-->
+
 <section data-ng-controller="PhotosController" data-ng-init="findOne()">
     <div class="page-header">
         <h1>Edit Photo</h1>
     </div>
     <div class="col-md-12">
+<!--    <canvas id="photoCanvas" width="500" height="500">Uw browser ondersteund geen canvas</canvas>
+-->    <image id="pic" src="{{photo.image}}" style="max-width:300px; max-height: 190px" />
+    
         <form class="form-horizontal" data-ng-submit="update()" novalidate>
             <fieldset>
                 <div class="form-group">
@@ -31,9 +89,26 @@
 						<option value="bathroomSelfie">Bathroom Selfie</option>
 					</select>
 				</label><br /><br />
+                
+                <div id="PresetFilters">
+  
+    <a class="filters" data-preset="vintage">Vintage</a>
+  
+    <a class="filters" data-preset="lomo">Lomo</a>
+  
+    <a class="filters" data-preset="clarity">Clarity</a>
+    
+    <a class="filters" data-preset="sinCity">Sin City</a>
+  
+    <a class="filters" data-preset="sunrise">Sunrise</a>
+  
+    <a class="filters" data-preset="crossProcess">Cross Process</a>
+    
+    </div>
                 </div>
+                <br><br>
                 <div class="form-group">
-                    <input type="submit" value="Update" class="btn btn-default">
+                    <input type="submit" value="Update" class="btn btn-default" style="font-family:'Playfair Display SC', serif">
                 </div>
 				<div data-ng-show="error" class="text-danger">
 					<strong data-ng-bind="error"></strong>
@@ -41,4 +116,5 @@
             </fieldset>
         </form>
     </div>
+    
 </section>
