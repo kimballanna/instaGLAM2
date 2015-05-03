@@ -51,17 +51,55 @@ font-family: 'Playball', cursive;
     .btn-default{
     	font-family: 'Playfair Display SC', serif;
     }
+    .tweet-item{
+        font-family: 'Playfair Display SC', serif;
+        background-color: #fbfbfb;
+        color:black;
+        padding:10px;
+        margin: 10px;
+        width: 300px;
+        height: 100%;
+        border: 2px solid #fce757;
+        border-radius: 20px;
+        display: inline-block;
+        
+     
+    }
+    /*#tweet-list{
+        
+        overflow: hidden;
+    }*/
     .input-group-addon{
     	font-family: 'Playfair Display SC', serif;
     	background-color: black;
     	color:#fce757;
     
     }
+    .profile-image img{
+    width:50px;
+    height:50px;
+    border-radius: 24px;
+}
+
+.media-body{
+    padding: 20px;
+ 
+}
+.tweeter-name{
+    font-weight:bold;
+}
+.tweeter-screenname{
+    color:#999;
+}
+.img{
+    width: 100%;
+    height: 100%;
+}
     </style>
 
 	<div ng-controller="TimelineController">
 		<div class="page-header">
-        <h1>Tweets About Selfies</h1>
+        <h1>Look Up Your Favorite Selfie Queens</h1>
     </div>
 
 	
@@ -74,7 +112,7 @@ font-family: 'Playball', cursive;
 	  			<span class="input-group-addon">@</span>
 
 					<!-- this text input is binded to a variable in the javascript controller -->
-				  <input type="text" class="form-control" placeholder="Twitter" ng-model="username">
+				  <input type="text" class="form-control" placeholder="Twitter User" ng-model="username">
 
 					<span class="input-group-btn">
 		        <button class="btn btn-default" type="submit">Get Tweets</button>
@@ -91,11 +129,25 @@ font-family: 'Playball', cursive;
 
 		    		<!-- this div will repeat for every tweet object in the array using a template-expanding directive -->
 		    		<div ng-repeat="tweet in tweetsResult" class="tweet-item">
-							{{tweet.text}}
-							<div>
-								Tweeted from <span>{{tweet.user.screen_name}}</span>
-							</div>
+                        <div class="media">
+							<a class="profile-image pull-left" href="{{tweet.user.url}}" target="_blank">
+                                <img src="{{tweet.user.profile_image_url}}"/></a>
+                                <div class ="media-body">
+                                    
+                                    
+
+                                    <span class="tweeter-name">{{tweet.user.name}}</span>
+							
+								<span class="tweeter-screenname">@{{tweet.user.screen_name}}</span><br/>
+                                {{tweet.text}}<br>
+
+
+                            </div>
+
+
+							
 		    		</div>
+                </div>
 
 		    	</div>
 

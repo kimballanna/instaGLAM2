@@ -5,7 +5,7 @@ angular.module('timeline')
 	function($scope, $resource) {
 
 	  // set a default username value
-      $scope.username = 'twitter';
+      $scope.username = 'kimkardashian';
       
       // empty tweet model
       $scope.tweetsResult = [];
