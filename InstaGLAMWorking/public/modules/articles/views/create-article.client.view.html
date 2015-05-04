@@ -1,3 +1,26 @@
+<link href='http://fonts.googleapis.com/css?family=Lobster|Anton|Pacifico|Playfair+Display+SC|Playball' rel='stylesheet' type='text/css'>
+<style>
+h1{
+    	font-family: 'Playball', serif;
+    	color:black;
+    }
+	
+	h4{
+		font-family: 'Playfair Display SC', serif;
+	}
+	.form-control{
+		border:#fce757 solid thin;
+	}
+	
+	.list-group-item{
+		border:#fce757 solid thin;
+	}
+	
+	map{
+		border:black solid medium;
+		border-radius:5px;
+	}
+</style>
 <section data-ng-controller="ArticlesController">
 	<div class="page-header">
 		<h1>New Article</h1>
@@ -5,20 +28,54 @@
 	<div class="col-md-12">
 		<form name="articleForm" class="form-horizontal" data-ng-submit="create()" novalidate>
 			<fieldset>
+            
+            <map center="[{{lat}},{{lon}}]" zoom ='5'>
+    <marker position="[{{lat}},{{lon}}]" visible="true"></marker>
+</map>
 				<div class="form-group" ng-class="{ 'has-error': articleForm.title.$dirty && articleForm.title.$invalid }">
-					<label class="control-label" for="title">Title</label>
+					<label class="control-label" for="title"><h4>Title</h4></label>
 					<div class="controls">
 						<input name="title" type="text" data-ng-model="title" id="title" class="form-control" placeholder="Title" required>
 					</div>
 				</div>
 				<div class="form-group">
-					<label class="control-label" for="content">Content</label>
+					<label class="control-label" for="content"><h4>About It</h4></label>
 					<div class="controls">
 						<textarea name="content" data-ng-model="content" id="content" class="form-control" cols="30" rows="10" placeholder="Content"></textarea>
 					</div>
 				</div>
+                
+             <!----Photo--->
+             
+             <div class="form-group">
+        <label class="control-label" for="content"><h4>Photo</h4></label>
+                <div class="controls">
+                			<input type="file" name="image" data-ng-model="imageHolder.image" id="image" accept="image/*" required/>
+<!--                            <img src="{{photo.image}}" name="pic" data-ng-model="pic" class="form-control" style="max-width:500px;" style="max-height:500px;">
+-->                        <!--<textarea name="pic" data-ng-model="pic" id="pic" class="form-control" cols="10" rows="1" placeholder="Photo"></textarea>-->
+                </div>
+                </div>
+             
+                
+                <!-- lat -->
+<div class="form-group">
+        <label class="control-label" for="content"><h4>Latitude</h4></label>
+                <div class="controls">
+                        <textarea name="lat" data-ng-model="lat" id="lat" class="form-control" cols="10" rows="1" placeholder="Latitude"></textarea>
+                </div>
+                </div>
+<!-- lon -->
+<div class="form-group">
+        <label class="control-label" for="content"><h4>Longitude</h4></label>
+                <div class="controls">
+                        <textarea name="lon" data-ng-model="lon" id="lon" class="form-control" cols="10" rows="1" placeholder="Longitude"></textarea>
+                </div>
+</div>
+
+
+                
 				<div class="form-group">
-					<input type="submit" class="btn btn-default">
+					<input type="submit" class="btn btn-default" style="font-family:'Playfair Display SC', serif;">
 				</div>
 				<div data-ng-show="error" class="text-danger">
 					<strong data-ng-bind="error"></strong>

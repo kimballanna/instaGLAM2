@@ -1,30 +1,84 @@
+<link href='http://fonts.googleapis.com/css?family=Lobster|Anton|Pacifico|Playfair+Display+SC|Playball' rel='stylesheet' type='text/css'>
+<style>
+
+h1{
+    	font-family: 'Playball', serif;
+    	color:black;
+    }
+	
+	h4,p{
+		font-family: 'Playfair Display SC', serif;
+	}
+	
+	.form-control{
+		border:#fce757 solid thin;
+	}
+	
+	.list-group-item{
+		border:#fce757 solid thin;
+	}
+	
+	map{
+		border:black solid medium;
+		border-radius:5px;
+	}
+	
+	</style>
 <section data-ng-controller="ArticlesController" data-ng-init="findOne()">
 	<div class="page-header">
-		<h1>Edit Your Trash Talk</h1>
+		<h1>Edit Your Selfie</h1>
 	</div>
 	<div class="col-md-12">
 		<form name="articleForm" class="form-horizontal" data-ng-submit="update(articleForm.$valid)" novalidate>
 			<fieldset>
+            
+            <map zoom ='5'>
+   <marker position="[0,0]" visible="true"> </marker>
+ </map>
+ 
 				<div class="form-group" ng-class="{ 'has-error' : submitted && articleForm.title.$invalid}">
-					<label class="control-label" for="title">Trashy Title</label>
+					<label class="control-label" for="title"><h4>Title</h4></label>
 					<div class="controls">
 						<input name="title" type="text" data-ng-model="article.title" id="title" class="form-control" placeholder="Title" required>
 					</div>
 					<div ng-show="submitted && articleForm.title.$invalid" class="help-block">
-						<p ng-show="articleForm.title.$error.required" class="text-danger">Trashy title is required</p>
+						<p ng-show="articleForm.title.$error.required" class="text-danger">Title is required</p>
 					</div>
 				</div>
 				<div class="form-group" ng-class="{ 'has-error' : submitted && articleForm.content.$invalid}">
-					<label class="control-label" for="content">Just how trashy was it..</label>
+					<label class="control-label" for="content"><h4>About It</h4></label>
 					<div class="controls">
 						<textarea name="content" data-ng-model="article.content" id="content" class="form-control" cols="30" rows="10" placeholder="Content" required></textarea>
 					</div>
 					<div ng-show="submitted && articleForm.content.$invalid" class="help-block">
-						<p ng-show="articleForm.content.$error.required" class="text-danger">Trashy comment is required</p>
+						<p ng-show="articleForm.content.$error.required" class="text-danger">About is required</p>
 					</div>
 				</div>
-				<div class="form-group">
-					<input type="submit" value="Update" class="btn btn-default">
+                
+                <div class="form-group" >
+    <label class="control-label" for="pic"><h4>Photo</h4></label>
+    <div class="controls">
+            <img src="{{photo.image}}" name="pic" data-ng-model="pic" class="form-control" style="max-width:500px;" style="max-height:500px;">
+    </div>
+</div>
+                
+                <div class="form-group" >
+    <label class="control-label" for="lat"><h4>Latitude</h4></label>
+    <div class="controls">
+            <textarea name="content" data-ng-model="article.lat" id="content" class="form-control" cols="10" rows="1" placeholder="Latitude" required>
+            </textarea>
+    </div>
+</div>
+<div class="form-group" >
+    <label class="control-label" for="lon"><h4>Longitude</h4></label>
+    <div class="controls">
+    <textarea name="content" data-ng-model="article.lon" id="content" class="form-control" cols="10" rows="1" placeholder="Longitude" required>
+    </textarea>
+    </div>
+</div>
+
+<div class="form-group">
+					<input type="submit" value="Update" class="btn btn-default" style="font-family:'Playfair Display SC', serif;">
 				</div>
 				<div data-ng-show="error" class="text-danger">
 					<strong data-ng-bind="error"></strong>

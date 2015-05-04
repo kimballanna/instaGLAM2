@@ -1,7 +1,30 @@
+<link href='http://fonts.googleapis.com/css?family=Lobster|Anton|Pacifico|Playfair+Display+SC|Playball' rel='stylesheet' type='text/css'>
+<style>
+h1, h3{
+    	font-family: 'Playball', serif;
+    	color:black;
+    }
+	
+	h4{
+		font-family: 'Playfair Display SC', serif;
+	}
+	
+	map{
+		border:black solid medium;
+		border-radius:5px;
+	}
+	</style>
 <section data-ng-controller="ArticlesController" data-ng-init="findOne()">
 	<div class="page-header">
 		<h1 data-ng-bind="article.title"></h1>
 	</div>
+    
+    <h3>Your Selfie</h3>
+    
+    <map zoom ='9'>
+   <marker position="[0,0]" visible="true"> </marker>
+ </map>
+    
 	<div class="pull-right" data-ng-show="authentication.user._id == article.user._id">xo
 		<a class="btn btn-primary" href="/#!/articles/{{article._id}}/edit">
 			<i class="glyphicon glyphicon-edit"></i>
@@ -18,5 +41,19 @@
 			<span data-ng-bind="article.user.displayName"></span>
 		</em>
 	</small>
+    <br>
+    <br>
+    <h4>Title:</h4>
+    <p class="lead" data-ng-bind="article.title"></p>
+    <h4>About It:</h4>
 	<p class="lead" data-ng-bind="article.content"></p>
+    <h4>Photo:<h4>
+    <p class="lead" data-ng-bind="article.photo">
+    <image ng-src="{{photo.image}}" style="max-width:700px;"/>
+    </p>
+    
+    <h4>Latitude: <h4>
+    <p class="lead" data-ng-bind="article.lat"></p>
+    <h4>Longitude: <h4>
+    <p class="lead" data-ng-bind="article.lon"></p>
 </section>

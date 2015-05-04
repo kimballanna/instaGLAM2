@@ -1,8 +1,39 @@
+<link href='http://fonts.googleapis.com/css?family=Lobster|Anton|Pacifico|Playfair+Display+SC|Playball' rel='stylesheet' type='text/css'>
+<style>
+
+h1{
+    	font-family: 'Playball', serif;
+    	color:black;
+    }
+	
+	h4,p{
+		font-family: 'Playfair Display SC', serif;
+	}
+	
+	.form-control{
+		border:#fce757 solid thin;
+	}
+	
+	.list-group-item{
+		border:#fce757 solid thin;
+	}
+	
+	map{
+		border:black solid medium;
+		border-radius:5px;
+	}
+	
+	</style>
 <section data-ng-controller="ArticlesController" data-ng-init="find()">
 	<div class="page-header">
-		<h1>Wall of Trash</h1>
+		<h1>It's a Selfie World After All</h1>
 	</div>
 	<div class="list-group">
+    
+    <map center="[0,0]" zoom="1">
+    <marker ng-repeat='article in articles' position='[{{article.lat}},{{article.lon}}]' visible="true" on-click="gotolink(event,article)">
+    </marker>
+</map>
 		<a data-ng-repeat="article in articles" data-ng-href="#!/articles/{{article._id}}" class="list-group-item">
 			<small class="list-group-item-text">
 				Posted on
@@ -11,10 +42,17 @@
 				<span data-ng-bind="article.user.displayName"></span>
 			</small>
 			<h4 class="list-group-item-heading" data-ng-bind="article.title"></h4>
-			<p class="list-group-item-text" data-ng-bind="article.content"></p>
+			<p  style="font-size:1.5em" style="font-family:'Playball', serif;" class="list-group-item-text" data-ng-bind="article.content"></p>
+            <p class="list-group-item-text" data-ng-bind="article.lat"></p>
+            <p class="lead" data-ng-bind="article.photo">
+    <img ng-src="{{photo.image}}" style="max-width:700px;" style="border:black solid thin"/>
+    </p>
+            <!-- <p class="list-group-item-text" data-ng-bind="article.photo"></p>-->
+            
+<p class="list-group-item-text" data-ng-bind="article.lon"></p>
 		</a>
 	</div>
 	<div class="alert alert-warning text-center" data-ng-if="articles.$resolved && !articles.length">
-		No trash talk yet, why don't you start some?
+		Post your selfie location!
 	</div>
 </section>

@@ -50,6 +50,22 @@
 .btn btn-default{
 	font-family: 'Playfair Display SC', serif;
 }
+
+.ng-image-editor {
+			width:200px;
+			height:200px;
+		}
+        .ng-image-editor {
+			float:left;
+		}
+		.offset-1 {
+			margin-left:10px;
+		}
+		.clear {
+			width:0px;
+			height:0px;
+			clear:both;
+		}
 </style>
 <!--
 <script type="text/javascript">
@@ -61,14 +77,40 @@
     this.render();
   });
 </script>-->
-
+ <!--<img src="/modules/photos/js/withmickey.jpeg">-->
+<script src="/modules/photos/js/app.js"></script>
+<script src="/modules/photos/js/intro.js"></script>
+<script src="/modules/photos/js/ngImageEditor.js"></script>
+<script src="/modules/photos/js/outro.js"></script>
+<script src="/modules/photos/js/Overlay.js"></script>
 <section data-ng-controller="PhotosController" data-ng-init="findOne()">
     <div class="page-header">
         <h1>Edit Photo</h1>
     </div>
     <div class="col-md-12">
-<!--    <canvas id="photoCanvas" width="500" height="500">Uw browser ondersteund geen canvas</canvas>
--->    <image id="pic" src="{{photo.image}}" style="max-width:300px; max-height: 190px" />
+    
+    
+    <div ng-controller="testCtrl">
+    <div on-img-change="onImageChange()" class="ng-image-editor" selected="selected" img-src="imgSrc" ng-image-editor="imageEditor" ng-init="imgSrc='/modules/photos/js/withmickey.jpeg'; selected = {width:150,height:150,top:0,left:0};" enabled-resize-selector = "enabledResizeSelector" ></div>
+<img class="offset-1" ng-src="{{selectedBlock}}" alt="" />
+<div class="clear"></div>
+<br />
+    
+    top:<input type="number" ng-model="selected.top" />
+<br>
+left:<input type="number" ng-model="selected.left" />
+<br>
+width:<input type="number" ng-model="selected.width" />
+<br>
+height:<input type="number" ng-model="selected.height" />
+<br>
+
+<button type="button" ng-click="capture()" ng-disabled="!enabled">capture</button>
+</div>    
+   <br><br>
+
+    
+   <image id="pic" src="{{photo.image}}" style="max-width:300px; max-height: 190px" />
     
         <form class="form-horizontal" data-ng-submit="update()" novalidate>
             <fieldset>
@@ -117,4 +159,24 @@
         </form>
     </div>
     
+    <script type="text/javascript">
+		function testCtrl( $scope ){
+            $scope.enabledResizeSelector = true;
+			$scope.imgSrc= ' /modules/photos/js/withmickey.jpeg';
+			var clear = $scope.$watch( 'imageEditor', function( imageEditor ){
+              //console.log( $scope.imageEditor );
+              //window.imageEditor = $scope.imageEditor;
+              if ( imageEditor ) {
+                clear();
+                $scope.enabled = true;
+              }
+            });
+            $scope.capture = function(){
+				$scope.selectedBlock = $scope.imageEditor.toDataURL();
+			};
+			$scope.onImageChange = function(){console.log( 'img change' );}
+		}
+	</script>
+    
 </section>
+
