@@ -7,7 +7,7 @@ angular.module('articles').controller('ArticlesController', ['$scope', '$statePa
 
 
 // Create new Photo
-		$scope.createPhoto = function() {
+		/*$scope.createPhoto = function() {
 			// Create new Photo object
 			var photo = new Photos ({
 			  name: this.name,
@@ -26,7 +26,7 @@ angular.module('articles').controller('ArticlesController', ['$scope', '$statePa
 		       $scope.error = errorResponse.data.message;
 		     });
                   
-		};
+		};*/
 
 		
 		$scope.create = function() {
