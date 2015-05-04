@@ -77,12 +77,12 @@
     this.render();
   });
 </script>-->
- <!--<img src="/modules/photos/js/withmickey.jpeg">-->
+ <!--<img src="/modules/photos/js/withmickey.jpeg">--><!--
 <script src="/modules/photos/js/app.js"></script>
 <script src="/modules/photos/js/intro.js"></script>
 <script src="/modules/photos/js/ngImageEditor.js"></script>
 <script src="/modules/photos/js/outro.js"></script>
-<script src="/modules/photos/js/Overlay.js"></script>
+<script src="/modules/photos/js/Overlay.js"></script>-->
 <section data-ng-controller="PhotosController" data-ng-init="findOne()">
     <div class="page-header">
         <h1>Edit Photo</h1>
@@ -90,7 +90,7 @@
     <div class="col-md-12">
     
     
-    <div ng-controller="testCtrl">
+   <!-- <div ng-controller="testCtrl">
     <div on-img-change="onImageChange()" class="ng-image-editor" selected="selected" img-src="imgSrc" ng-image-editor="imageEditor" ng-init="imgSrc='/modules/photos/js/withmickey.jpeg'; selected = {width:150,height:150,top:0,left:0};" enabled-resize-selector = "enabledResizeSelector" ></div>
 <img class="offset-1" ng-src="{{selectedBlock}}" alt="" />
 <div class="clear"></div>
@@ -107,7 +107,7 @@ height:<input type="number" ng-model="selected.height" />
 
 <button type="button" ng-click="capture()" ng-disabled="!enabled">capture</button>
 </div>    
-   <br><br>
+   <br><br>-->
 
     
    <image id="pic" src="{{photo.image}}" style="max-width:300px; max-height: 190px" />
@@ -119,10 +119,10 @@ height:<input type="number" ng-model="selected.height" />
                     <div class="controls">
                         <input type="text" data-ng-model="photo.name" id="name" class="form-control" placeholder="Name" required>
                     </div>
-					<label class="control-label" for="name">Description</label>
+					<!--<label class="control-label" for="name">Description</label>
                     <div class="controls">
                         <input type="text" data-ng-model="photo.description" id="description" class="form-control" placeholder="Description" required>
-                    </div><br />
+                    </div>--><br />
 					
 					<label>Selfie Type:
 					<select ng-model="orderSelfies">
@@ -132,7 +132,7 @@ height:<input type="number" ng-model="selected.height" />
 					</select>
 				</label><br /><br />
                 
-                <div id="PresetFilters">
+                <!--<div id="PresetFilters">
   
     <a class="filters" data-preset="vintage">Vintage</a>
   
@@ -146,9 +146,9 @@ height:<input type="number" ng-model="selected.height" />
   
     <a class="filters" data-preset="crossProcess">Cross Process</a>
     
-    </div>
+    </div>-->
                 </div>
-                <br><br>
+                <!--<br><br>-->
                 <div class="form-group">
                     <input type="submit" value="Update" class="btn btn-default" style="font-family:'Playfair Display SC', serif">
                 </div>
